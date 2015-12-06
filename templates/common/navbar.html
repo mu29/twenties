@@ -1,0 +1,29 @@
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <!-- 타이틀 -->
+        <a class="navbar-brand" href="{{ url_for('index') }}">2말3초</a>
+    </div>
+    <!-- 메뉴 목록 -->
+    <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            {% block menu_home %}
+                <li><a href="{{ url_for('index') }}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 홈</a> </li>
+            {% endblock %}
+            {% block menu_intro %}
+                <li><a href="#"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> 소개</a> </li>
+            {% endblock %}
+            {% block menu_contact %}
+                <li><a href="{{ url_for('contact') }}"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 문의</a> </li>
+            {% endblock %}
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            {% if not session.email %}
+                <li><a href="{{ url_for('register') }}">회원가입</a> </li>
+                <li><a href="{{ url_for('login') }}">로그인</a> </li>
+            {% else %}
+                <li><a href="{{ url_for('logout') }}">로그아웃</a> </li>
+            {% endif %}
+            <li><a href="">도움말</a> </li>
+        </ul>
+    </div>
+</nav>
