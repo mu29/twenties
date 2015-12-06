@@ -7,7 +7,6 @@ class Config(object):
     CSRF_ENABLED = True
     SECRET_KEY = 'secretkey'
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
-    MODULES = []
 
 
 class ProductionConfig(Config):

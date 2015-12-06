@@ -17,12 +17,6 @@
             {% endblock %}
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            {% if not session.email %}
-                <li><a href="{{ url_for('register') }}">회원가입</a> </li>
-                <li><a href="{{ url_for('login') }}">로그인</a> </li>
-            {% else %}
-                <li><a href="{{ url_for('logout') }}">로그아웃</a> </li>
-            {% endif %}
             <li><a href="">도움말</a> </li>
         </ul>
     </div>
