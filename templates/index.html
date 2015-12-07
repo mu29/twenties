@@ -127,10 +127,10 @@
                             <p>
                                 <div class="row">
                                     <div class="col-xs-2">
-                                        <input type="text" name="name{{ i }}" class="form-control" placeholder="이름">
+                                        <input type="text" name="name{{ i }}" class="form-control" placeholder="이름" required="true">
                                     </div>
                                     <div class="col-xs-4">
-                                        <input type="text" name="phone{{ i }}" class="form-control" placeholder="휴대폰 번호">
+                                        <input type="text" name="phone{{ i }}" class="form-control" placeholder="휴대폰 번호" required="true">
                                     </div>
                                 </div>
                             </p>
@@ -147,5 +147,27 @@
         </div>
     </div>
 </div>
+{% endblock %}
 
+{% block js %}
+<script type="text/javascript">
+    $("form").submit(function(e) {
+        var ref = $(this).find("[required]");
+        $(ref).each(function() {
+            if ($(this).val() == '') {
+                alert('필수 항목을 모두 채워주세요!');
+                $(this).focus();
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        if (!$('input[name="university"]:checked').val() || !$('input[name="gender"]:checked').val()) {
+            alert('필수 항목을 모두 채워주세요!');
+            return false;
+        }
+
+        return true;
+    });
+</script>
 {% endblock %}
