@@ -16,8 +16,13 @@
 </head>
 
 <body>
-    {% block body %}
-    {% endblock %}
+    <div class="container">
+        {% block body %}
+        {% endblock %}
+
+        {% block footer %}
+        {% endblock %}
+    </div>
 
     <!-- 스크립트 로드 -->
     <script type="text/javascript" src="/static/js/jquery-1.11.3.min.js"></script>
