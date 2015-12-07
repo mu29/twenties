@@ -1,9 +1,13 @@
-{% extends "commons/base.html" %} {% block title %} 2말3초 {% endblock %} {% block body %}
+{% extends "commons/base.html" %}
+{% block title %}
+이말삼초
+{% endblock %}
+{% block body %}
 <!-- 네비게이션 바  class="navbar navbar-default" -->
 <nav>
     <div class="navbar-header">
         <!-- 타이틀 -->
-        <a class="navbar-brand" href="{{ url_for('index') }}">타이틀</a>
+        <a class="navbar-brand" href="{{ url_for('index') }}">이말삼초</a>
     </div>
     <!-- 메뉴 목록 -->
     <div id="navbar" class="navbar-collapse collapse">
@@ -70,7 +74,7 @@
                             참가할 친구들의 연락처를 입력해주세요. 휴대폰 번호로 카카오톡 오픈 채팅 링크를 보내드립니다.
                             <span class="label label-primary">필수</span>
                         </p>
-                        {% for i in range(0, 4) %}
+                        {% for i in range(0, 3) %}
                             <p>
                                 <div class="row">
                                     <div class="col-xs-2">
