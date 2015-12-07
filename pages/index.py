@@ -2,7 +2,6 @@
 
 from flask import *
 from app import *
-from database.apply_db import apply_db
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -21,6 +20,6 @@ def index():
         if len(list(set(phones))) < 3:
             print "중복"
 
-        apply_db.put(names, phones, university, gender)
+        #apply_db.put(names, phones, university, gender)
         return "success"
     return render_template('index.html')
