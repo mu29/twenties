@@ -77,6 +77,10 @@ ul li, h1, h2, h3, h4 {
         font-size: 30pt;
     }
 
+	.apply {
+		padding: 225px 20px;
+	}
+
 	.intro {
 		padding: 225px 20px;
 	}
@@ -132,6 +136,10 @@ ul li, h1, h2, h3, h4 {
         font-size: 40pt;
     }
 
+	.apply {
+		padding: 150px 0;
+	}
+
 	.intro {
 		padding: 150px 0;
 	}
@@ -178,11 +186,16 @@ html, body {
     text-align: center;
     padding: 5%;
 }
+.intro {
+	text-align: center;
+	background-image: url('/static/img/route66.jpg');
+	background-size: cover;
+	color: white;
+}
 .apply {
     background-color: whitesmoke;
+	text-align: center;
     margin: 0 auto;
-    padding: 30px 0;
-    height: 600px;
 }
 
 .forms {
@@ -245,11 +258,4 @@ nav.affix img {
 .title {
   text-align: center;
   font-weight: 700;
-}
-
-.intro {
-	text-align: center;
-	background-image: url('/static/img/route66.jpg');
-	background-size: cover;
-	color: white;
 }
