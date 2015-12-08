@@ -78,11 +78,11 @@ ul li, h1, h2, h3, h4 {
     }
 
 	.apply {
-		padding: 225px 20px;
+        height: 700px
 	}
 
 	.intro {
-		padding: 225px 20px;
+		padding: 150px 20px;
 	}
 
 	.intro > .sub {
@@ -137,11 +137,11 @@ ul li, h1, h2, h3, h4 {
     }
 
 	.apply {
-		padding: 150px 0;
+        height: 700px
 	}
 
 	.intro {
-		padding: 150px 0;
+		padding: 225px 0;
 	}
 
 	.intro > .sub {
@@ -190,6 +190,7 @@ html, body {
 	text-align: center;
 	background-image: url('/static/img/route66.jpg');
 	background-size: cover;
+    background-position: center;
 	color: white;
 }
 .apply {
@@ -197,9 +198,8 @@ html, body {
 	text-align: center;
     margin: 0 auto;
 }
-
 .forms {
-  padding: 30px 0;
+  padding: 70px 0;
   max-width: 480px;
   margin: 0 auto;
 }
@@ -258,4 +258,59 @@ nav.affix img {
 .title {
   text-align: center;
   font-weight: 700;
+}
+footer {
+	padding: 35px;
+	text-align: center;
+	background-color: #666;
+	color: white;
+}
+.form-wrapper {
+    position: absolute;
+    background: #fff;
+    max-width: 480px;
+    min-height: 100px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    padding: 30px;
+    margin: 0 auto;
+}
+
+.header {
+    background:#3098E3;
+    font-size:24px;
+    padding:10px 10px;
+    border-radius:3px;
+    text-align:center;
+    margin-bottom:30px;
+    color:#fff;
+}
+.input-button { margin-top: 50px; }
+.input-button button {
+    color: #3098E3;
+    font-size: 32px;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    line-height: 70px;
+    border-radius: 80px;
+    position: absolute;
+    bottom: -40px; right: 40%;
+    border: 0;
+    background: linear-gradient(to bottom right, #fff,#fff);
+    box-shadow: 0 6px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+.input-button button:hover {
+    outline:none;
+    background:#3098E3;
+    color:#fff;
+}
+button:focus, button:active {
+    outline:none;
+}
+img#loader {
+    position:absolute;
+    top:25px;
+    left:25px;
 }
