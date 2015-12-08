@@ -7,8 +7,8 @@ from models.group import *
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
+    message = None
     if request.method == 'POST':
-        error = None
         univ = request.form['university'].encode('utf-8')
         gender = request.form['gender'].encode('utf-8')
         names = [request.form['name0'].encode('utf-8'),
@@ -17,17 +17,14 @@ def index():
         phones = [request.form['phone0'].encode('utf-8'),
             request.form['phone1'].encode('utf-8'),
             request.form['phone2'].encode('utf-8')]
-        # for param in request.form:
-        #     print param
-        #     value = request.form[param].encode('utf-8')
-        #     if 'university' in param: univ = value
-        #     if 'gender' in param: gender = value
-        #     if 'name' in param: names.append(value)
-        #     if 'phone' in param: phones.append(value)
 
-        # 휴대폰 번호 검사하자
         if len(list(set(phones))) < 3:
-            error = "휴대폰 번호가 중복되었습니다."
+            message = u"휴대폰 번호가 중복되었어요.."
+            return render_template('index.html', message = message)
+
+        if db.session.query(User).filter(User.phone.in_(phones)).count() > 0:
+            message = u"이미 신청한 사람이 있어요!"
+            return render_template('index.html', message = message)
 
         try:
             group = Group(univ, gender)
@@ -39,8 +36,8 @@ def index():
                 db.session.add(user)
             db.session.commit()
         except:
-            errors.append("이미 등록된 휴대폰 번호입니다.")
+            message = u"알 수 없는 오류에요ㅠㅠ"
 
-        #apply_db.put(names, phones, university, gender)
-        return "success"
-    return render_template('index.html')
+        message = u"성공적으로 신청했어요!"
+
+    return render_template('index.html', message = message)
