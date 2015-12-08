@@ -56,57 +56,60 @@
     </div>
     <a name="#apply"></a>
     <div class="apply">
-      <form action="" method="post" enctype="multipart/form-data">
-        <label><span class="label label-primary">성별</span></label>
-        <div class="form-group">
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-default">
-              <input type="radio" name="gender" value="여자" autocomplete="off">
-              여자
-            </label>
-            <label class="btn btn-default">
-              <input type="radio" name="gender" value="남자" autocomplete="off">
-              남자
-            </label>
+      <h2 class="title">엄마가 미팅은 3대3 이랬어요</h2>
+      <div class="forms">
+        <form action="" method="post" enctype="multipart/form-data">
+          <label>성별</label>
+          <div class="form-group">
+            <div class="btn-group btn-group-justified" data-toggle="buttons">
+              <label class="btn btn-default">
+                <input type="radio" name="gender" value="여자" autocomplete="off">
+                여자
+              </label>
+              <label class="btn btn-default">
+                <input type="radio" name="gender" value="남자" autocomplete="off">
+                남자
+              </label>
+            </div>
           </div>
-        </div>
 
-        <label><span class="label label-primary">학교</span></label>
-        <div class="form-group">
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-default">
-              <input type="radio" name="university" value="울산대학교" autocomplete="off">
-              울산대학교
-            </label>
-            <label class="btn btn-default">
-              <input type="radio" name="university" value="유니스트" autocomplete="off">
-              유니스트
-            </label>
-            <label class="btn btn-default">
-              <input type="radio" name="university" value="울산과학대학교" autocomplete="off">
-              울산과학대학교
-            </label>
-            <label class="btn btn-default">
-              <input type="radio" name="university" value="춘해보건대학교" autocomplete="off">
-              춘해보건대학교
-            </label>
+          <label>학교</label>
+          <div class="form-group">
+            <div class="btn-group btn-group-justified" data-toggle="buttons">
+              <label class="btn btn-default">
+                <input type="radio" name="university" value="울산대학교" autocomplete="off">
+                울산대학교
+              </label>
+              <label class="btn btn-default">
+                <input type="radio" name="university" value="유니스트" autocomplete="off">
+                유니스트
+              </label>
+              <label class="btn btn-default">
+                <input type="radio" name="university" value="울산과학대학교" autocomplete="off">
+                울산과학대학교
+              </label>
+              <label class="btn btn-default">
+                <input type="radio" name="university" value="춘해보건대학교" autocomplete="off">
+                춘해보건대학교
+              </label>
+            </div>
           </div>
-        </div>
 
-        <label><span class="label label-primary">연락처</span></label>
-        <div class="form-group" style="margin-left:30%; margin-right:30%">
-          {% for i in range(0, 3) %}
-          <div class="input-group">
-            <input type="text" name="name{{ i }}" class="form-control" placeholder="이름" required="true">
-            <input type="text" name="phone{{ i }}" class="form-control" placeholder="휴대폰 번호" required="true">
+          <label>연락처</label>
+          <div class="form-group">
+            {% for i in range(0, 3) %}
+            <div class="input-group info">
+              <input type="text" name="name{{ i }}" class="form-control" placeholder="이름" required="true">
+              <input type="text" name="phone{{ i }}" class="form-control" placeholder="휴대폰 번호" required="true">
+            </div>
+            {% endfor %}
           </div>
-          {% endfor %}
-        </div>
 
-        <div class="submit pull-right">
-          <p>
-            <input type="submit" class="btn btn-primary" value="보내기">
-          </p>
+          <div class="submit pull-right">
+            <p>
+              <input type="submit" class="btn btn-primary" value="보내기">
+            </p>
+          </div>
         </div>
       </form>
     </div>
