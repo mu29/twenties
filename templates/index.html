@@ -12,25 +12,49 @@
             <li><a href="#apply">신청하기</a></li>
         </ul>
     </nav>
-	  <a name="#home"></a>
+	<a name="#home"></a>
     <div id="main">
         <div class="cover">
-            <div class="main_contents">
-    		        <h1>이말삼초</h1>
-    		        <h4>더 이상 망설일 수 없는 너와 나의 시간<h4>
+            <div class="inner_contents">
+    		    <h1>이말삼초</h1>
+    		    <h4>더 이상 망설일 수 없는 너와 나의 시간<h4>
             </div>
         </div>
     </div>
-	  <a name="#intro"></a>
-    <div class="intro">
-        <div class="intro_contents">
-            <h2>소개</h2>
-            <p>
-                언제까지 크리스마스에 케빈이랑 놀 생각이세요?
-            </p>
+	<div class="line"></div>
+	<a name="#intro"></a>
+    <div id="intro">
+        <div class="cover">
+            <div class="inner_contents">
+    		    <h1 style="margin-bottom: 5%">여러분의 고충, 알고있어요.</h1>
+                <div class="row">
+                    <div class="pull-left" style="text-align: left;">
+                        <h3>누나정도면 예쁜데 왜 남자친구가 없어요?</h3>
+                        <font style="text-decoration : line-through;">그래서 데려가려고? (정색) 아니요.</font>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="pull-right" style="text-align: right;">
+                        <h3>오빠는 이렇게 재밌는데 왜 여자친구가 없어요?</h3>
+                        <font style="text-decoration : line-through;">ㅎㅎ 얼굴도 재밌어서..</font>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="pull-left" style="text-align: left;">
+                        <h3>언니는 눈이 높아서 남자친구가 없는거야!</h3>
+                        <font style="text-decoration : line-through;">잔망스러운 것, 너의 건방이 그것보다 조금 높은 것 같구나?</font>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="pull-right" style="text-align: right;">
+                        <h3>솔직히 너 정도면 잘생겼는데 왜 여친이 없냐;</h3>
+                        <font style="text-decoration : line-through;">그런 말을 해주는 여자친구 없는 너랑 친구라서?</font>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-	  <a name="#apply"></a>
+    <a name="#apply"></a>
     <div class="apply">
         <form action="" method="post" enctype="multipart/form-data">
             <label><span class="label label-primary">성별</span></label>
@@ -112,11 +136,13 @@
 
     $(document).ready(function() {
         $('#main').css('height', $(window).height());
-	      $('#main h1').css('padding-top', $(window).height()/2 - $('#main h1').height());
+        $('#intro').css('height', $('#intro').width() * 0.625);
+	    $('#main h1').css('padding-top', $(window).height()/2 - $('#main h1').height());
 
         $(window).resize(function() {
-    		    $('#main').css('height', $(window).height());
-    	      $('#main h1').css('padding-top', $(window).height()/2 - $('#main h1').height());
+    		$('#main').css('height', $(window).height());
+            $('#intro').css('height', $('#intro').width() * 0.625);
+    	    $('#main h1').css('padding-top', $(window).height()/2 - $('#main h1').height());
         });
 
         $('nav').affix({
