@@ -70,20 +70,16 @@
             </div>
 
             <label><span class="label label-primary">연락처</span></label>
-            <div class="form-group">
+            <div class="form-group" style="margin-left:30%; margin-right:30%">
                 {% for i in range(0, 3) %}
-                    <div>
-                        <div class="col-xs-4">
+                        <div class="input-group">
                             <input type="text" name="name{{ i }}" class="form-control" placeholder="이름" required="true">
-                        </div>
-                        <div class="col-xs-8">
                             <input type="text" name="phone{{ i }}" class="form-control" placeholder="휴대폰 번호" required="true">
                         </div>
-                    </div>
                 {% endfor %}
             </div>
 
-            <div class="submit">
+            <div class="submit pull-right">
                 <p>
                     <input type="submit" class="btn btn-primary" value="보내기">
                 </p>
