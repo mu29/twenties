@@ -193,6 +193,12 @@ html, body {
     background-position: center;
 	color: white;
 }
+.desc {
+    background-color: white;
+	text-align: center;
+    margin: 0 auto;
+    padding: 30px;
+}
 .apply {
     background-color: whitesmoke;
 	text-align: center;
