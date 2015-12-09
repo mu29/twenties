@@ -161,9 +161,13 @@ $(document).ready(function() {
             scrollTop: $('a[name=' + where + ']').offset().top
         });
     });
+
+    {% if message %}
+        document.body.scrollTop = document.body.scrollHeight;
+    {% endif %}
 });
 
-function number_filter(str_value){
+function number_filter(str_value) {
 	return str_value.replace(/[^0-9]/gi, "");
 }
 </script>
