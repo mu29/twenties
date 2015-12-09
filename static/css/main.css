@@ -334,3 +334,8 @@ img#loader {
     top:25px;
     left:25px;
 }
+a:active,
+a:hover {
+    color: white;
+    outline: 0
+}
