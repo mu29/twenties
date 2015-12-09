@@ -5,6 +5,10 @@ from app import *
 from models.user import *
 from models.group import *
 
+@app.errorhandler(Exception)
+def unhandled_exception(e):
+    return u"알 수 없는 오류에요ㅠㅠ"
+
 @app.route('/', methods=['POST', 'GET'])
 def index():
     message = None
