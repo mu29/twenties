@@ -25,7 +25,7 @@
     <a name="#intro"></a>
     <div class="intro">
         <p class="sub">인연도 사람을 만나야 생기지</p>
-        <h3>우리에게 부족했던 건<br>단지 <span style="font-size: 40pt">기회</span>였다.</h3>
+        <h3>우리에게 부족했던 건<br>단지 기회였다.</h3>
     </div>
     <a name="#desc"></a>
     <div class="desc">
@@ -88,7 +88,7 @@
                         {% for i in range(0, 3) %}
                         <div class="input-group info">
                             <input type="text" name="name{{ i }}" class="form-control" placeholder="이름" required="true" style="width: 35.7%">
-                            <input type="text" name="phone{{ i }}" class="form-control" placeholder="휴대폰 번호" required="true" style="width: 64.3%">
+                            <input type="text" name="phone{{ i }}" class="form-control" placeholder="휴대폰 번호 (-제외)" required="true" style="width: 64.3%" onkeyup="this.value=number_filter(this.value);" maxlength="11">
                         </div>
                         {% endfor %}
                     </div>
@@ -100,12 +100,13 @@
             </div>
         </div>
         {% if message %}
-        <div class="alert alert-info" role="alert" style="margin-top: 500px">
-            {{ message }}
-        </div>
+            <div id="message" class="alert alert-info" role="alert" style="margin-top: 500px;">
+                {{ message }}
+            </div>
+        {% else %}
+            <div id="message" class="alert alert-info" role="alert" style="margin-top: 500px; display: none">
+            </div>
         {% endif %}
-        <div id="message" class="alert alert-info" role="alert" style="margin-top: 500px; display: none">
-        </div>
     </div>
 </div>
 {% include 'commons/footer.html' %}
@@ -161,5 +162,9 @@ $(document).ready(function() {
         });
     });
 });
+
+function number_filter(str_value){
+	return str_value.replace(/[^0-9]/gi, "");
+}
 </script>
 {% endblock %}
