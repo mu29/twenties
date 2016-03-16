@@ -5,5 +5,6 @@ PAGES = [
 ]
 
 MODELS = [
-    'models.user'
+    'models.user',
+    'models.location'
 ]

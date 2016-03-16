@@ -2,7 +2,7 @@
 
 from flask import *
 from app import *
-from models.user import *
+from models.location import *
 
 @app.errorhandler(Exception)
 def unhandled_exception(e):
@@ -11,6 +11,8 @@ def unhandled_exception(e):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     message = None
+    locations = db.session.query(Location).all()
+
     try:
         if request.method == 'POST':
             univ = request.form['university'].encode('utf-8')
@@ -42,7 +44,7 @@ def index():
 
             message = u"성공적으로 신청했어요!"
 
-        return render_template('index.html', message = message)
+        return render_template('index.html', message = message, locations = locations)
 
     except:
         return u"알 수 없는 오류에요ㅠㅠ"
