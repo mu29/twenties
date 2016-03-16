@@ -45,7 +45,7 @@
     <div class="apply">
         <div class="forms">
             <div class="form-wrapper">
-                <div class="header"><h1>엄마가 미팅은 3:3 이랬어요.</h1></div>
+                <div class="header"><h1>새로운 인연을 찾아서 :)</h1></div>
                 <form action="" method="post" enctype="multipart/form-data">
                     <label>성별</label>
                     <div class="form-group">
@@ -61,36 +61,101 @@
                         </div>
                     </div>
 
-                    <label>학교</label>
+                    <label>나이</label>
+                    <div class="form-group">
+                        <input type="number" name="age" class="form-control" placeholder="숫자만 입력해주세요." required="true" onkeyup="this.value=number_filter(this.value);" maxlength="2">
+                    </div>
+
+                    <label>현재 거주지</label>
+                    <div class="form-group">
+                        <input type="text" name="my_location" class="form-control" placeholder="ex) 강남구 논현동" required="true">
+                    </div>
+
+                    <label>원하는 이성 거주지</label>
+                    <div class="form-group">
+                        <input type="text" name="other_location" class="form-control" placeholder="ex) 강남구 삼성동, 송파구, 서울 전지역 등" required="true">
+                    </div>
+
+                    <label>선호하는 이상형</label>
+                    <div class="form-group">
+                        <textarea name="ideal" class="form-control" rows="3" placeholder="키/성격/특징 등 선호하는 이상형을 간단하게 입력해주세요."></textarea>
+                    </div>
+
+                    <label>선호하지 않는 분</label>
+                    <div class="form-group">
+                        <textarea name="ideal" class="form-control" rows="3" placeholder="이런 분만은 절대 싫다!"></textarea>
+                    </div>
+
+                    <label>자신을 표현해주세요</label>
+                    <div class="form-group">
+                        <textarea name="ideal" class="form-control" rows="3" placeholder=""></textarea>
+                    </div>
+
+                    <label>주요 관심사</label>
+                    <div class="form-group">
+                        <input type="text" name="my_location" class="form-control" placeholder="ex) 영화/운동/만화 등" required="true">
+                    </div>
+
+                    <label>연애 경험</label>
                     <div class="form-group">
                         <div class="btn-group btn-group-justified" data-toggle="buttons">
                             <label class="btn btn-default">
-                                <input type="radio" name="university" value="울산대학교" autocomplete="off">
-                                울산대
+                                <input type="radio" name="gender" value="여자" autocomplete="off">
+                                유
                             </label>
                             <label class="btn btn-default">
-                                <input type="radio" name="university" value="유니스트" autocomplete="off">
-                                유니스트
+                                <input type="radio" name="gender" value="남자" autocomplete="off">
+                                무
                             </label>
                             <label class="btn btn-default">
-                                <input type="radio" name="university" value="울산과학대학교" autocomplete="off">
-                                울산과학대
-                            </label>
-                            <label class="btn btn-default">
-                                <input type="radio" name="university" value="춘해보건대학교" autocomplete="off">
-                                춘해보건대
+                                <input type="radio" name="gender" value="남자" autocomplete="off">
+                                비밀
                             </label>
                         </div>
                     </div>
 
-                    <label>연락처</label>
+                    <label>주변인</label>
                     <div class="form-group">
-                        {% for i in range(0, 3) %}
-                        <div class="input-group info">
-                            <input type="text" name="name{{ i }}" class="form-control" placeholder="이름" required="true" style="width: 35.7%">
-                            <input type="text" name="phone{{ i }}" class="form-control" placeholder="휴대폰 번호 (-제외)" required="true" style="width: 64.3%" onkeyup="this.value=number_filter(this.value);" maxlength="11">
+                        <div class="btn-group btn-group-justified" data-toggle="buttons">
+                            <label class="btn btn-default">
+                                <input type="radio" name="gender" value="여자" autocomplete="off">
+                                적다
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="gender" value="남자" autocomplete="off">
+                                보통
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="gender" value="남자" autocomplete="off">
+                                많다
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="gender" value="남자" autocomplete="off">
+                                비밀
+                            </label>
                         </div>
-                        {% endfor %}
+                    </div>
+
+                    <label>선호 연령</label>
+                    <div class="form-group">
+                        <div class="btn-group btn-group-justified" data-toggle="buttons">
+                            <label class="btn btn-default">
+                                <input type="radio" name="gender" value="연상" autocomplete="off">
+                                연상
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="gender" value="연하" autocomplete="off">
+                                연하
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="gender" value="동갑" autocomplete="off">
+                                동갑
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="gender" value="상관없다" autocomplete="off">
+                                상관없다
+                            </label>
+                        </div>
                     </div>
 
                     <div class="input-button">
