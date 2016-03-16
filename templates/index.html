@@ -61,6 +61,11 @@
                         </div>
                     </div>
 
+                    <label>휴대폰 번호</label>
+                    <div class="form-group">
+                        <input type="number" name="phone" class="form-control" placeholder="숫자만 입력해주세요. (-제외)" required="true" maxlength="11">
+                    </div>
+
                     <label>나이</label>
                     <div class="form-group">
                         <input type="number" name="age" class="form-control" placeholder="숫자만 입력해주세요." required="true" onkeyup="this.value=number_filter(this.value);" maxlength="2">
@@ -68,47 +73,69 @@
 
                     <label>현재 거주지</label>
                     <div class="form-group">
-                        <input type="text" name="my_location" class="form-control" placeholder="ex) 강남구 논현동" required="true">
-                    </div>
-
-                    <label>원하는 이성 거주지</label>
-                    <div class="form-group">
-                        <input type="text" name="other_location" class="form-control" placeholder="ex) 강남구 삼성동, 송파구, 서울 전지역 등" required="true">
+                        <select class="form-control" name="location">
+                            <option>강남구</option>
+                            <option>강서구</option>
+                            <option>송파구</option>
+                            <option>양천구</option>
+                            <option>구로구</option>
+                            <option>금천구</option>
+                            <option>영등포구</option>
+                            <option>동작구</option>
+                            <option>관악구</option>
+                            <option>서초구</option>
+                            <option>강동구</option>
+                            <option>마포구</option>
+                            <option>서대문구</option>
+                            <option>은평구</option>
+                            <option>종로구</option>
+                            <option>중구</option>
+                            <option>용산구</option>
+                            <option>강북구</option>
+                            <option>성북구</option>
+                            <option>동대문구</option>
+                            <option>성동구</option>
+                            <option>노원구</option>
+                            <option>중랑구</option>
+                            <option>광진구</option>
+                            <option>도봉구</option>
+                            <option>경기권</option>
+                        </select>
                     </div>
 
                     <label>선호하는 이상형</label>
                     <div class="form-group">
-                        <textarea name="ideal" class="form-control" rows="3" placeholder="키/성격/특징 등 선호하는 이상형을 간단하게 입력해주세요."></textarea>
+                        <textarea name="ideal" class="form-control" rows="3" placeholder="키/성격/특징 등 선호하는 이상형을 간단하게 적어주세요."></textarea>
                     </div>
 
                     <label>선호하지 않는 분</label>
                     <div class="form-group">
-                        <textarea name="ideal" class="form-control" rows="3" placeholder="이런 분만은 절대 싫다!"></textarea>
+                        <textarea name="non_ideal" class="form-control" rows="3" placeholder="이런 분만은 절대 싫다!"></textarea>
                     </div>
 
                     <label>자신을 표현해주세요</label>
                     <div class="form-group">
-                        <textarea name="ideal" class="form-control" rows="3" placeholder=""></textarea>
+                        <textarea name="introduce" class="form-control" rows="3" placeholder="간단한 자기소개 / 어필할 점 / 주의할 점 등을 적어주세요."></textarea>
                     </div>
 
                     <label>주요 관심사</label>
                     <div class="form-group">
-                        <input type="text" name="my_location" class="form-control" placeholder="ex) 영화/운동/만화 등" required="true">
+                        <input type="text" name="interest" class="form-control" placeholder="ex) 영화/운동/만화 등" required="true">
                     </div>
 
                     <label>연애 경험</label>
                     <div class="form-group">
                         <div class="btn-group btn-group-justified" data-toggle="buttons">
                             <label class="btn btn-default">
-                                <input type="radio" name="gender" value="여자" autocomplete="off">
+                                <input type="radio" name="experience" value="유" autocomplete="off">
                                 유
                             </label>
                             <label class="btn btn-default">
-                                <input type="radio" name="gender" value="남자" autocomplete="off">
+                                <input type="radio" name="experience" value="무" autocomplete="off">
                                 무
                             </label>
                             <label class="btn btn-default">
-                                <input type="radio" name="gender" value="남자" autocomplete="off">
+                                <input type="radio" name="experience" value="비밀" autocomplete="off">
                                 비밀
                             </label>
                         </div>
@@ -118,19 +145,19 @@
                     <div class="form-group">
                         <div class="btn-group btn-group-justified" data-toggle="buttons">
                             <label class="btn btn-default">
-                                <input type="radio" name="gender" value="여자" autocomplete="off">
+                                <input type="radio" name="friend" value="적다" autocomplete="off">
                                 적다
                             </label>
                             <label class="btn btn-default">
-                                <input type="radio" name="gender" value="남자" autocomplete="off">
+                                <input type="radio" name="friend" value="보통" autocomplete="off">
                                 보통
                             </label>
                             <label class="btn btn-default">
-                                <input type="radio" name="gender" value="남자" autocomplete="off">
+                                <input type="radio" name="friend" value="많다" autocomplete="off">
                                 많다
                             </label>
                             <label class="btn btn-default">
-                                <input type="radio" name="gender" value="남자" autocomplete="off">
+                                <input type="radio" name="friend" value="비밀" autocomplete="off">
                                 비밀
                             </label>
                         </div>
@@ -140,19 +167,19 @@
                     <div class="form-group">
                         <div class="btn-group btn-group-justified" data-toggle="buttons">
                             <label class="btn btn-default">
-                                <input type="radio" name="gender" value="연상" autocomplete="off">
+                                <input type="radio" name="prefer_age" value="연상" autocomplete="off">
                                 연상
                             </label>
                             <label class="btn btn-default">
-                                <input type="radio" name="gender" value="연하" autocomplete="off">
+                                <input type="radio" name="prefer_age" value="연하" autocomplete="off">
                                 연하
                             </label>
                             <label class="btn btn-default">
-                                <input type="radio" name="gender" value="동갑" autocomplete="off">
+                                <input type="radio" name="prefer_age" value="동갑" autocomplete="off">
                                 동갑
                             </label>
                             <label class="btn btn-default">
-                                <input type="radio" name="gender" value="상관없다" autocomplete="off">
+                                <input type="radio" name="prefer_age" value="상관없다" autocomplete="off">
                                 상관없다
                             </label>
                         </div>
