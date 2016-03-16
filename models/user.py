@@ -16,11 +16,18 @@ class User(db.Model):
     friend = db.Column(db.String(10))
     prefer_age = db.Column(db.String(10))
 
-    def __init__(self, name, phone, university, gender):
-        self.name = name
-        self.phone = phone
-        self.university = university
-        self.gender = gender
+    def __init__(self, params):
+        self.phone = paras['phone']
+        self.age = paras['age']
+        self.gender = paras['gender']
+        self.location = paras['location']
+        self.ideal = paras['ideal']
+        self.non_ideal = paras['non_ideal']
+        self.introduce = paras['introduce']
+        self.interest = paras['interest']
+        self.experience = paras['experience']
+        self.friend = paras['friend']
+        self.prefer_age = paras['prefer_age']
 
     def __repr__(self):
-        return "<Teacher(id='%d', phone='%s', age='%s', gender='%s', location='%s', ideal='%s', non_ideal='%s', introduce='%s', interest='%s', experience='%s', friend='%s', prefer_age='%s', )>" % (self.id, self.phone, self.age, self.gender, self.location, self.ideal, self.non_ideal, self.introduce, self.interest, self.experience, self.friend, self.prefer_age)
+        return "<User(id='%d', phone='%s', age='%s', gender='%s', location='%s', ideal='%s', non_ideal='%s', introduce='%s', interest='%s', experience='%s', friend='%s', prefer_age='%s')>" % (self.id, self.phone, self.age, self.gender, self.location, self.ideal, self.non_ideal, self.introduce, self.interest, self.experience, self.friend, self.prefer_age)
