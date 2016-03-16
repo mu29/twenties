@@ -3,7 +3,6 @@
 from flask import *
 from app import *
 from models.user import *
-from models.group import *
 
 @app.errorhandler(Exception)
 def unhandled_exception(e):
@@ -31,21 +30,19 @@ def index():
                 message = u"이미 신청한 사람이 있어요!"
                 return render_template('index.html', message = message)
 
-            try:
-                group = Group(univ, gender)
-                db.session.add(group)
-                db.session.commit()
-                for i in range(0, 3):
-                    user = User(names[i], phones[i], univ, gender)
-                    user.group_id = group.id
-                    db.session.add(user)
-                db.session.commit()
-            except:
-                message = u"알 수 없는 오류에요ㅠㅠ"
+            # try:
+            #     for i in range(0, 3):
+            #         user = User(names[i], phones[i], univ, gender)
+            #         user.group_id = group.id
+            #         db.session.add(user)
+            #     db.session.commit()
+            #     db.session.close()
+            # except:
+            #     message = u"알 수 없는 오류에요ㅠㅠ"
 
             message = u"성공적으로 신청했어요!"
 
         return render_template('index.html', message = message)
-        
+
     except:
         return u"알 수 없는 오류에요ㅠㅠ"
