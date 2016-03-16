@@ -17,17 +17,17 @@ class User(db.Model):
     prefer_age = db.Column(db.String(10))
 
     def __init__(self, params):
-        self.phone = paras['phone']
-        self.age = paras['age']
-        self.gender = paras['gender']
-        self.location = paras['location']
-        self.ideal = paras['ideal']
-        self.non_ideal = paras['non_ideal']
-        self.introduce = paras['introduce']
-        self.interest = paras['interest']
-        self.experience = paras['experience']
-        self.friend = paras['friend']
-        self.prefer_age = paras['prefer_age']
+        self.phone = params['phone']
+        self.age = params['age']
+        self.gender = params['gender']
+        self.location = params['location']
+        self.ideal = params['ideal']
+        self.non_ideal = params['non_ideal']
+        self.introduce = params['introduce']
+        self.interest = params['interest']
+        self.experience = params['experience']
+        self.friend = params['friend']
+        self.prefer_age = params['prefer_age']
 
     def __repr__(self):
         return "<User(id='%d', phone='%s', age='%s', gender='%s', location='%s', ideal='%s', non_ideal='%s', introduce='%s', interest='%s', experience='%s', friend='%s', prefer_age='%s')>" % (self.id, self.phone, self.age, self.gender, self.location, self.ideal, self.non_ideal, self.introduce, self.interest, self.experience, self.friend, self.prefer_age)

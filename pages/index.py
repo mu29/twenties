@@ -2,6 +2,7 @@
 
 from flask import *
 from app import *
+from models.user import *
 from models.location import *
 
 @app.errorhandler(Exception)
@@ -11,40 +12,49 @@ def unhandled_exception(e):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     message = None
-    locations = db.session.query(Location).all()
+    session = db.session()
+    locations = session.query(Location).all()
+    session.close()
 
     try:
         if request.method == 'POST':
-            univ = request.form['university'].encode('utf-8')
-            gender = request.form['gender'].encode('utf-8')
-            names = [request.form['name0'].encode('utf-8'),
-                request.form['name1'].encode('utf-8'),
-                request.form['name2'].encode('utf-8')]
-            phones = [request.form['phone0'].encode('utf-8'),
-                request.form['phone1'].encode('utf-8'),
-                request.form['phone2'].encode('utf-8')]
+            phone = request.form['phone']
+            age = int(request.form['age'])
+            gender = request.form['gender']
+            location = request.form['location']
+            ideal = request.form['ideal']
+            non_ideal = request.form['non_ideal']
+            introduce = request.form['introduce']
+            interest = request.form['interest']
+            experience = request.form['experience']
+            friend = request.form['friend']
+            prefer_age = request.form['prefer_age']
 
-            if len(list(set(phones))) < 3:
-                message = u"휴대폰 번호가 중복되었어요.."
-                return render_template('index.html', message = message)
+            session = db.session()
+            user = User({
+                'phone' : phone,
+                'age' : age,
+                'gender' : gender,
+                'location' : location,
+                'ideal' : ideal,
+                'non_ideal' : non_ideal,
+                'introduce' : introduce,
+                'interest' : interest,
+                'experience' : experience,
+                'friend' : friend,
+                'prefer_age' : prefer_age
+            })
 
-            if db.session.query(User).filter(User.phone.in_(phones)).count() > 0:
-                message = u"이미 신청한 사람이 있어요!"
-                return render_template('index.html', message = message)
+            try:
+                session.add(user)
+                session.commit()
+            except:
+                message = u"이미 신청한 것 같아요 :("
 
-            # try:
-            #     for i in range(0, 3):
-            #         user = User(names[i], phones[i], univ, gender)
-            #         user.group_id = group.id
-            #         db.session.add(user)
-            #     db.session.commit()
-            #     db.session.close()
-            # except:
-            #     message = u"알 수 없는 오류에요ㅠㅠ"
-
+            session.close()
             message = u"성공적으로 신청했어요!"
 
         return render_template('index.html', message = message, locations = locations)
 
     except:
-        return u"알 수 없는 오류에요ㅠㅠ"
+        return render_template('index.html', message = u"알 수 없는 오류에요ㅠㅠ", locations = locations)
