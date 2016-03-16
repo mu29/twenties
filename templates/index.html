@@ -30,13 +30,14 @@
     <a name="#desc"></a>
     <div class="desc">
         <div class="line"></div>
-        <h3>다가오는 크리스마스,<br/>올해도 혼자 집에서 뒹굴거릴 생각이신가요?</h3>
+        <h3>개강한 지 한달,<br/>이번 주말에도 혼자 집에서 뒹굴거릴 생각이신가요?</h3>
         <br/>
         <p>
-            1. 지금 당장 단톡방에서 친구 2명만 더 꼬시면 돼요<br/>
-            2. 성별, 학교, 연락처만 적고서 기다리면<br/>
-            3. 12월 18일 금요일 저녁, 문자로 단체 대화방 링크가 도착합니다 <br/>
-            4. 기회는 주어졌습니다! 미팅 시간을 잡으세요!
+            1. 아래 설문지를 작성하고 일주일만 기다리면 <br/>
+            2. 선호하는 이상형에 맞는 이성 분들 목록을 보여 드립니다. <br/>
+            3. 가장 잘 맞을 것 같은 분 세분만 선택하세요! <br/>
+            4. 서로를 지목하면 바로 연결해드리고, 실패하더라도 랜덤으로 매칭시켜 드립니다 :) <br/>
+            5. 여성 분은 무료! 남성 분은 커피 한잔 값 5,000원에 모십니다.
         </p>
         <br/>
         <div class="line"></div>
@@ -45,7 +46,7 @@
     <div class="apply">
         <div class="forms">
             <div class="form-wrapper">
-                <div class="header"><h1>새로운 인연을 찾아서 :)</h1></div>
+                <div class="header"><h1>기회를 잡으세요!</h1></div>
                 <form action="" method="post" enctype="multipart/form-data">
                     <label>성별</label>
                     <div class="form-group">
@@ -169,11 +170,11 @@
             </div>
         </div>
         {% if message %}
-            <div id="message" class="alert alert-info" role="alert" style="margin-top: 500px;">
+            <div id="message" class="alert alert-info" role="alert" style="margin-top: 1200px;">
                 {{ message }}
             </div>
         {% else %}
-            <div id="message" class="alert alert-info" role="alert" style="margin-top: 500px; display: none">
+            <div id="message" class="alert alert-info" role="alert" style="margin-top: 1200px; display: none">
             </div>
         {% endif %}
     </div>
@@ -187,7 +188,6 @@ $("form").submit(function(e) {
     var ref = $(this).find("[required]");
     $(ref).each(function() {
         if ($(this).val() == '') {
-            // alert('필수 항목을 모두 채워주세요!');
             $('#message').text('주어진 양식을 모두 채워주세요! ㅠㅠ');
             $('#message').css('display', '');
             $(this).focus();
@@ -196,8 +196,8 @@ $("form").submit(function(e) {
         }
     });
 
-    if (!$('input[name="university"]:checked').val() || !$('input[name="gender"]:checked').val()) {
-        // alert('필수 항목을 모두 채워주세요!');
+    if (!$('input[name="gender"]:checked').val() || !$('input[name="experience"]:checked').val()
+          || !$('input[name="friend"]:checked').val() || !$('input[name="prefer_age"]:checked').val()) {
         $('#message').text('주어진 양식을 모두 채워주세요! ㅠㅠ');
         $('#message').css('display', '');
         return false;
