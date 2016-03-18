@@ -18,6 +18,7 @@ def index():
 
     try:
         if request.method == 'POST':
+            name = request.form['name']
             phone = request.form['phone']
             age = int(request.form['age'])
             gender = request.form['gender']
@@ -32,6 +33,7 @@ def index():
 
             session = db.session()
             user = User({
+                'name' : name,
                 'phone' : phone,
                 'age' : age,
                 'gender' : gender,

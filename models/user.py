@@ -4,6 +4,7 @@ class User(db.Model):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(10))
     phone = db.Column(db.String(11), unique=True)
     age = db.Column(db.Integer)
     gender = db.Column(db.String(10))
@@ -17,6 +18,7 @@ class User(db.Model):
     prefer_age = db.Column(db.String(10))
 
     def __init__(self, params):
+        self.name = params['name']
         self.phone = params['phone']
         self.age = params['age']
         self.gender = params['gender']
