@@ -50,11 +50,11 @@ def index():
             try:
                 session.add(user)
                 session.commit()
+                message = u"성공적으로 신청했어요!"
             except:
                 message = u"이미 신청한 것 같아요 :("
 
             session.close()
-            message = u"성공적으로 신청했어요!"
 
         return render_template('index.html', message = message, locations = locations)
 
